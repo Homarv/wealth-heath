@@ -5,14 +5,14 @@ import PageError from './pages/PageError';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/index" element={<Home />} />
-        {/* path="*" fonctionne si jamais l'url ne correspond à rien de dééclaré au dessus  */}
-        <Route path="*" element={<PageError />} />
-        <Route path="/employee-list" element={<EmployeeList/>}/>
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/index" element={<Home />} />
+          {/* path="*" fonctionne si jamais l'url ne correspond à rien de dééclaré au dessus  */}
+          <Route path="*" element={<PageError />} />
+          <Route path="/employee-list" element={<EmployeeList/>}/>
+        </Routes>
+      </BrowserRouter>
   );
 }
 

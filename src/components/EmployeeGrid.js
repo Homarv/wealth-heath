@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { DataGrid, GridToolbarQuickFilter } from '@mui/x-data-grid';
+import store from '../reducers/store';
 
 const columns = [
   { field: 'first-name', headerName: 'First Name', width: 150 },
@@ -13,11 +14,13 @@ const columns = [
   { field: 'zip-code', headerName: 'Zip Code', width: 150 },
 ];
 
-const getEmployeeDataFromLocalStorage = () => {
-  const localStorageData = localStorage;
-  return Object.keys(localStorageData).map((key) => {
-    const parsedData = JSON.parse(localStorageData[key]);
-    return { id: key, ...parsedData };
+const getEmployeeDataFromStore = () => {
+  const state = store.getState();
+  const formData = state.form.formData;
+
+  return formData.map((employee, index) => {
+    // add id of employee , necessary to Grid functionnal
+    return { id: index + 1, ...employee };
   });
 };
 
@@ -25,8 +28,8 @@ const EmployeeGrid = () => {
   const [rows, setRows] = useState([]);
 
   useEffect(() => {
-    const employeeData = getEmployeeDataFromLocalStorage();
-    console.log (employeeData)
+    const employeeData = getEmployeeDataFromStore();
+    console.log(store)
     setRows(employeeData);
   }, []);
 

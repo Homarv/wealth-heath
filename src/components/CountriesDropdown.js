@@ -5,8 +5,8 @@ function CountryDropdown() {
 
   return (
     <div className='state-container'>
-      <label className='state-label'>State</label>
-      <select className='state-select' required >
+      <label htmlFor="state" className='state-label'>State</label>
+      <select id="state" name="state" className='state-select' required >
         <option value="">Sélectionnez un pays</option>
         {allCountries.map((country) => (
           <option key={country.name} value={country.name}>
