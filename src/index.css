@@ -94,6 +94,7 @@ input , select{
   color: white;
   z-index: 1000; 
   padding: 30px;
+  border: solid white 2px;
 }
 
 .close-button {
