@@ -72,7 +72,7 @@ const FormToCreateEmployee = () => {
           <option>Legal</option>
         </select>
         
-        <button className='btn' type='submit'> Envoyer </button>
+        <button className='btn' type='submit'> SAVE</button>
       </form>
 
       {isFormSubmitted && (

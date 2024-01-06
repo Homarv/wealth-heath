@@ -7,7 +7,7 @@ const EmployeeList = () => {
   return (
     <div>
       <Header title="Current Employees"/>
-      <Link to="/index" className='link'>
+      <Link to="/" className='link'>
           Home
       </Link>
       <EmployeeGrid/>
